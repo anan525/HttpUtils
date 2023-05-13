@@ -39,6 +39,7 @@ public class SelfCallServerInterceptor implements SelfInterceptor {
             requestBody.onWriteBody(urlConnection.getOutputStream());
         }
         int responseCode = ((HttpsURLConnection) urlConnection).getResponseCode();
+        String contentEncoding = ((HttpsURLConnection) urlConnection).getContentEncoding();
         InputStream inputStream = urlConnection.getInputStream();
         String responseMessage = ((HttpsURLConnection) urlConnection).getResponseMessage();
         SelfResponse response = new SelfResponse(responseCode, responseMessage, inputStream);
