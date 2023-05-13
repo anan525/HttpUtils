@@ -1,2 +1,3 @@
+include ':SelfHttpTools'
 include ':app'
 rootProject.name = "HttpUtils"
